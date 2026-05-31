@@ -1,0 +1,23 @@
+services:
+  web:
+    build: ./frontend
+    ports: ["3000:3000"]
+    depends_on: [api]
+  api:
+    build: ./backend
+    ports: ["8000:8000"]
+    environment:
+      DATABASE_URL: postgresql://flow:flow@db:5432/flow
+    depends_on: [db]
+  db:
+    image: timescale/timescaledb-ha:pg16
+    ports: ["5432:5432"]
+    environment:
+      POSTGRES_USER: flow
+      POSTGRES_PASSWORD: flow
+      POSTGRES_DB: flow
+    volumes:
+      - pgdata:/home/postgres/pgdata/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+volumes:
+  pgdata:
