@@ -9,9 +9,9 @@ export const metrics = [
 ];
 
 export const routes = [
-  { id: 'fastest', label: 'AI recommended', via: 'VIP Road · Polytechnic Sq.', time: '18 min', distance: '8.6 km', saving: 'Save 11 min', emission: '0.9 kg', color: '#5be7a9', points: '245,490 300,445 355,415 405,362 472,340 525,300 580,266 645,225 713,190' },
-  { id: 'eco', label: 'Eco route', via: 'Lake View Rd · Roshanpura', time: '22 min', distance: '9.1 km', saving: '−22% CO₂', emission: '0.7 kg', color: '#62a8ff', points: '245,490 320,478 386,449 452,422 524,385 574,326 630,292 713,190' },
-  { id: 'shortest', label: 'Shortest', via: 'Hamidia Rd · Peer Gate', time: '27 min', distance: '7.4 km', saving: 'Busy traffic', emission: '1.2 kg', color: '#ad8cff', points: '245,490 282,435 340,385 408,335 470,286 541,252 610,220 713,190' }
+  { id: 'fastest', label: 'AI recommended', via: 'VIP Road · Polytechnic Sq.', time: '18 min', distance: '8.6 km', saving: 'Save 11 min', emission: '0.9 kg', color: '#5be7a9', points: '245,490 300,445 355,415 405,362 472,340 525,300 580,266 645,225 713,190', path: [] as string[] },
+  { id: 'eco', label: 'Eco route', via: 'Lake View Rd · Roshanpura', time: '22 min', distance: '9.1 km', saving: '−22% CO₂', emission: '0.7 kg', color: '#62a8ff', points: '245,490 320,478 386,449 452,422 524,385 574,326 630,292 713,190', path: [] as string[] },
+  { id: 'shortest', label: 'Shortest', via: 'Hamidia Rd · Peer Gate', time: '27 min', distance: '7.4 km', saving: 'Busy traffic', emission: '1.2 kg', color: '#ad8cff', points: '245,490 282,435 340,385 408,335 470,286 541,252 610,220 713,190', path: [] as string[] }
 ];
 
 export const congestion = [
