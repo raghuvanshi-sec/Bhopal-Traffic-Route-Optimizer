@@ -22,6 +22,8 @@ const BHOPAL_JUNCTIONS = [
   "Raja Bhoj Airport"
 ];
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 export default function Home() {
   const [activeNav, setActiveNav] = useState('Live city');
   const [forecast, setForecast] = useState(15);
@@ -57,6 +59,18 @@ export default function Home() {
   // Map settings
   const [mapMode, setMapMode] = useState('Traffic');
   const [zoom, setZoom] = useState(100);
+
+  // Travel Mode state
+  const [travelMode, setTravelMode] = useState<'drive' | 'bike' | 'transit'>('drive');
+
+  // Modal states
+  const [isControlModalOpen, setIsControlModalOpen] = useState(false);
+  const [isWeatherModalOpen, setIsWeatherModalOpen] = useState(false);
+  const [isAlertsModalOpen, setIsAlertsModalOpen] = useState(false);
+
+  // Dynamic Leaflet map states
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapInstance, setMapInstance] = useState<any>(null);
 
   // Toast notifier function
   const showToast = (title: string, desc: string, type: 'success' | 'error' | 'info' = 'success') => {
